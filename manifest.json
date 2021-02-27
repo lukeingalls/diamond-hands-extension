@@ -1,0 +1,33 @@
+{
+    "description": "This is an extension that is meant to help you not paper hand $GME. If you are on Fidelity and are looking to trade GME this extension will hide all sell buttons.",
+    "manifest_version": 2,
+    "name": "Fidelity Diamond Hands",
+    "version": "0.0.1",
+
+    "content_scripts": [
+        {
+            "matches": ["*://*.fidelity.com/ftgw/brkg/equityticket/*"],
+            "js": ["diamond-hands-new-ticket.js"],
+            "css": ["diamond-hands.css"]
+        },
+        {
+            "matches": ["*://*.fidelity.com/ftgw/fbc/oftrade/*"],
+            "js": ["diamond-hands-old-ticket.js"],
+            "css": ["diamond-hands.css"]
+        },
+        {
+            "matches": ["*://*.fidelity.com/ftgw/fbc/oftop/*"],
+            "js": ["diamond-hands-popup-ticket.js"],
+            "css": ["diamond-hands.css"]
+        }
+    ],
+
+    "page_action": {
+        "browser_style": true
+ 
+    },
+
+    "icons": {
+        "40": "diamond-hands.png"
+    }
+}
