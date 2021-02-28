@@ -2,7 +2,6 @@ const INPUT_ID = "#qt-symbol";
 
 const setInput = (input) => {
   input.addEventListener("change", (e) => {
-    console.log(e.target.value);
     if (e.target.value.toUpperCase() === "GME") {
       Array.from(
         document.querySelector("#st-form-container--action")?.children
@@ -27,7 +26,6 @@ const setInput = (input) => {
 
     if (response.diamondHands) {
       const trade_container = document.querySelector("#tradeTicketContainer");
-      console.log(trade_container);
       const getInput = (mutationsList, observer) => {
         if (trade_container.children.length) {
           const interval_id = setInterval(() => {
